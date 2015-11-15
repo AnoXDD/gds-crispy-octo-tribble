@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+
+
+    <link rel="stylesheet" type="text/css" href="main.css">
+
+</head>
+<body>
+<div id="header">
+    <div id="nav">
+        <div class="row">
+            <div class="column">
+                <div id="logo">
+                    <?php include $_SERVER['DOCUMENT_ROOT'] . '/php/logo.php'; ?>
+                </div>
+                <div id="user">
+                    <?php include $_SERVER['DOCUMENT_ROOT'] . '/php/user.php'; ?>
+                </div>
+                <div id="nav-menu" class="nav-nav">
+                    <div class="slider-left"><span></span></div>
+                    <div class="scroll-hide">
+                        <div class="scroll-fix">
+                            <?php include $_SERVER['DOCUMENT_ROOT'] . '/php/menu.php'; ?>
+                        </div>
+                    </div>
+                    <div class="slider-right"><span></span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<div class="nav"></div>
+
+<div class="page-content">
+    <div class="section"
+         style="background-image:url('http://www.gameguyz.com/sites/default/files/pictures_images/11.11.2014/1415687403_0.jpg');">
+        <div class="section-inner">
+            <div class="content-slider">
+                <a class="slider-filler"></a>
+                <a data-nav="A" href="#"><span>A</span></a>
+                <a data-nav="R" href="#"><span>R</span></a>
+                <a data-nav="F" href="#"><span>F</span></a>
+                <a data-nav="T" href="#"><span>T</span></a>
+                <a class="slider-filler"></a>
+            </div>
+        </div>
+    </div>
+    <div class="section"
+         style="background-image:url('http://www.pcgamewallpapers.net/1920x1080/starcraft-ii-legacy-of-the-void-cover.jpg');">
+        <div class="section-inner">
+
+        </div>
+    </div>
+    <div class="section" style="background-image:url('http://images3.alphacoders.com/553/553594.jpg');">
+        <div class="section-inner">
+
+        </div>
+    </div>
+    <div class="section" style="background-image:url('http://i2.2pcdn.com/2015/www/2015/201533/wp315/2902.jpg');">
+        <div class="section-inner">
+
+        </div>
+    </div>
+</div>
+
+
+<script type="text/javascript" src="jquery-1.11.js"></script>
+<script type="text/javascript" src="jquery.fullPage.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('.page-content').fullpage({});
+
+        $('.content-slider, .scroll-fix, .scroll-hide').on('mousedown click ', function (event) {
+            event.stopPropagation();
+        });
+
+    });
+
+
+</script>
+
+</body>
+</html>

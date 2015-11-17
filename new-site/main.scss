@@ -43,6 +43,7 @@ $large-desktop-width: 1440px;
 html {
   box-sizing: border-box;
   width:100%;
+  display: block;
 }
 
 *, *:before, *:after {
@@ -59,13 +60,65 @@ img, button:focus {
   outline: none;
 }
 
+//Nav bar
+.nav {
+  z-index: 1000;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  background-color: aquamarine;
+  & > * {
+    padding: 0 20px;
+    line-height: 50px;
+    text-decoration: none;
 
-//Horizontal slider. clean up later
+    &:hover {
+      transform: scale(1.1, 1.1);
+    }
+  }
+}
+
+
+
+//Fullpage: Horizontal slider. clean up later
+.content-slider {
+  width: 100%;
+  height: 500px;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: lightblue;
+  float: left;
+  overflow: auto;
+  white-space: nowrap;
+
+
+  .slider-inner {
+    width: 9000px;
+    height:100%;
+
+
+
+    a {
+      float: left;
+      width: 1000px;
+      height: 100%;
+      margin: 0 20px;
+      background-color: darkseagreen;
+    }
+
+  }
+
+}
 
 
 
 
-
+//Fullpage: sections and content
 
 .page-content {
   margin: 0;

@@ -3,49 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <title></title>
-
-
     <link rel="stylesheet" type="text/css" href="main.css">
-
 </head>
 <body>
-<div id="header">
-    <div id="nav">
-        <div class="row">
-            <div class="column">
-                <div id="logo">
-                    <?php include $_SERVER['DOCUMENT_ROOT'] . '/php/logo.php'; ?>
-                </div>
-                <div id="user">
-                    <?php include $_SERVER['DOCUMENT_ROOT'] . '/php/user.php'; ?>
-                </div>
-                <div id="nav-menu" class="nav-nav">
-                    <div class="slider-left"><span></span></div>
-                    <div class="scroll-hide">
-                        <div class="scroll-fix">
-                            <?php include $_SERVER['DOCUMENT_ROOT'] . '/php/menu.php'; ?>
-                        </div>
-                    </div>
-                    <div class="slider-right"><span></span></div>
-                </div>
-            </div>
-        </div>
-    </div>
 
+<div class="nav">
+    <a href="#">-LOGO-</a>
+    <a href="about.html">About</a>
+    <a href="#">Members</a>
+    <a href="#">Games</a>
+    <a href="#">Calendar</a>
+    <a href="#">Resources</a>
+    <a href="#">-social media-</a>
 </div>
-<div class="nav"></div>
 
 <div class="page-content">
     <div class="section"
          style="background-image:url('http://www.gameguyz.com/sites/default/files/pictures_images/11.11.2014/1415687403_0.jpg');">
         <div class="section-inner">
             <div class="content-slider">
-                <a class="slider-filler"></a>
-                <a data-nav="A" href="#"><span>A</span></a>
-                <a data-nav="R" href="#"><span>R</span></a>
-                <a data-nav="F" href="#"><span>F</span></a>
-                <a data-nav="T" href="#"><span>T</span></a>
-                <a class="slider-filler"></a>
+                <div class="slider-inner">
+                    <a class="slider-item" data-nav="A" href="#">A</a>
+                    <a class="slider-item" data-nav="R" href="#">R</a>
+                    <a class="slider-item" data-nav="F" href="#">F</a>
+                    <a class="slider-item" data-nav="T" href="#">T</a>
+                </div>
             </div>
         </div>
     </div>
@@ -74,9 +56,10 @@
     $(document).ready(function () {
         $('.page-content').fullpage({});
 
-        $('.content-slider, .scroll-fix, .scroll-hide').on('mousedown click ', function (event) {
-            event.stopPropagation();
-        });
+//        $('.content-slider').on('mousedown touchmove scroll click ', function (event) {
+//            event.stopPropagation();
+//        });
+
 
     });
 

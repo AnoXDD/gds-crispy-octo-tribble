@@ -1,49 +1,79 @@
 @import 'normalize';
 
-
 $large-phone-width: 480px;
 $tablet-width: 720px;
 $small-desktop-width: 1024px;
 $medium-desktop-width: 1280px;
 $large-desktop-width: 1440px;
 
+$light-blue: #82B1FF;
+$blue: #448AFF;
+$dark-blue: #2979ff;
+$darker-blue: #2962ff;
+
+$light-blue: #80d8ff;
+$blue: #40c4ff;
+$dark-blue: #00b0ff;
+$darker-blue: #0091ea;
+
+$orange: #ffab40;
+$dark-orange: #ff9100;
+
 @mixin large-phone {
   @media (only-screen and min-width: #{$large-phone-width}) and (max-width: #{$tablet-width - 1px}) {
     @content;
   }
 }
+
 @mixin tablet {
   @media (only-screen and min-width: #{$tablet-width}) and (max-width: #{$small-desktop-width - 1px}) {
     @content;
   }
 }
+
+// The combination of large-phone and tablet
+@mixin mobile {
+  @media (only-screen and min-width: #{$large-phone-width}) and (max-width: #{$small-desktop-width - 1px}) {
+    @content;
+  }
+}
+
 @mixin desktop {
   @media (only-screen and min-width: #{$small-desktop-width}) {
     @content;
   }
 }
+
 @mixin small-desktop {
   @media (only-screen and min-width: #{$small-desktop-width}) and (max-width: #{$medium-desktop-width - 1px}) {
     @content;
   }
 }
+
 @mixin medium-desktop {
   @media (only-screen and min-width: #{$medium-desktop-width}) and (max-width: #{$large-desktop-width - 1px}) {
     @content;
   }
 }
+
 @mixin large-desktop {
   @media (only-screen and min-width: #{$large-desktop-width}) {
     @content;
   }
 }
 
+// Helper class
+.btn-anim {
+  transition-property: background, box-shadow, font-size, transform;
+  transition-duration: .4s;
+}
 
 //Defaults to standardize behavior
-html {
+body, html {
   box-sizing: border-box;
-  width:100%;
+  width: 100%;
   display: block;
+  font-family: 'Open Sans', sans-serif;
 }
 
 *, *:before, *:after {
@@ -70,19 +100,20 @@ img, button:focus {
   height: 50px;
   display: flex;
   justify-content: center;
-  background-color: aquamarine;
+  background-color: $dark-blue;
   & > * {
     padding: 0 20px;
     line-height: 50px;
     text-decoration: none;
+    color: white;
+
+    @extend .btn-anim;
 
     &:hover {
       transform: scale(1.1, 1.1);
     }
   }
 }
-
-
 
 //Fullpage: Horizontal slider. clean up later
 .content-slider {
@@ -96,12 +127,9 @@ img, button:focus {
   overflow: auto;
   white-space: nowrap;
 
-
   .slider-inner {
     width: 9000px;
-    height:100%;
-
-
+    height: 100%;
 
     a {
       float: left;
@@ -109,14 +137,12 @@ img, button:focus {
       height: 100%;
       margin: 0 20px;
       background-color: darkseagreen;
+
     }
 
   }
 
 }
-
-
-
 
 //Fullpage: sections and content
 
@@ -125,7 +151,6 @@ img, button:focus {
   height: 100vh;
   width: 100%;
   padding: 0;
-
 
   .section {
     height: 100%;
@@ -138,7 +163,7 @@ img, button:focus {
   }
 
   .section-inner {
-    background-color: rgba(50, 50, 50, 0.5);
+    background-color: rgba(255, 255, 255, 0.8);
     height: 100%;
     width: 100%;
     position: relative;
@@ -171,24 +196,65 @@ img, button:focus {
       width: auto;
       position: absolute;
       z-index: 201;
-      max-width: 100%;
-      top: calc(50% + 25px);
-      @include desktop {
-        top: 50%;
+      max-width: 90%;
+      top: 20%;
+      left: 5%;
+      font-size: 30px;
+      padding: 20px;
+      font-weight: bold;
+
+      @include large-phone {
+        font-size: 36px;
       }
-      left: 50%;
-      transform: translate(-50%, -50%);
+      @include tablet {
+        font-size: 40px;
+      }
+      @include small-desktop {
+        font-size: 44px;
+      }
+      @include medium-desktop {
+        font-size: 48px;
+      }
+      @include large-desktop {
+        font-size: 52px;
+      }
+
+      .btn {
+        background: $blue;
+        padding: 10px;
+        display: block;
+        font-size: 25px;
+        border-radius: 4px;
+        width: 250px;
+        text-align: center;
+        color: #fff;
+        margin-top: 30px;
+        box-shadow: 1px 1px 1px #888;
+
+        @extend .btn-anim;
+
+        @include mobile {
+          font-size: 15px;
+          width: 150px;
+        }
+
+        &:hover {
+          background: $darker-blue;
+          box-shadow: 1px 3px 1px #888;
+        }
+
+        &:active {
+          background: $dark-blue;
+        }
+      }
 
       .sub-title, .sub-title p {
         @extend p;
-        margin: 0;
+        margin: 20px 0;
         text-shadow: none;
-        padding-left: 10%;
-        white-space: nowrap;
-        color: blue;
-        font-family: zekton, sans-serif;
-        font-weight: bold;
-        float: right;
+        padding: 0 5%;
+        font-weight: 300;
+        color: black;
 
         font-size: 20px;
         @include large-phone {
@@ -201,10 +267,12 @@ img, button:focus {
           font-size: 34px;
         }
         @include medium-desktop {
-          font-size: 38px;
+          margin: 50px 0;
+          font-size: 34px;
         }
         @include large-desktop {
-          font-size: 42px;
+          margin: 50px 0 70px;
+          font-size: 34px;
         }
       }
       h1 {

@@ -375,7 +375,7 @@ img, button:focus {
   outline: none; }
 
 .nav {
-  z-index: 1000;
+  z-index: 1;
   position: fixed;
   width: 100%;
   top: 0;
@@ -391,26 +391,37 @@ img, button:focus {
     color: white; }
     .nav > *:hover {
       transform: scale(1.1, 1.1); }
+  .nav.hidden {
+    top: -50px; }
 
 .content-slider {
   width: 100%;
-  height: 500px;
+  height: 100%;
   position: relative;
   top: 50%;
   transform: translateY(-50%);
-  background-color: lightblue;
+  background-color: #80d8ff;
   float: left;
   overflow: auto;
-  white-space: nowrap; }
+  white-space: nowrap;
+  z-index: 20; }
   .content-slider .slider-inner {
     width: 9000px;
-    height: 100%; }
-    .content-slider .slider-inner a {
+    height: 100%;
+    background: rgba(255, 255, 255, 0.8); }
+    .content-slider .slider-inner .slider-item {
       float: left;
       width: 1000px;
       height: 100%;
-      margin: 0 20px;
-      background-color: darkseagreen; }
+      margin: 0 20px; }
+      .content-slider .slider-inner .slider-item .slide-item-container {
+        width: 100%;
+        height: calc(100% - 100px);
+        margin: 25px;
+        border: 1px solid #000; }
+      .content-slider .slider-inner .slider-item .slide-item-desc {
+        height: 50px;
+        text-align: center; }
 
 .page-content {
   margin: 0;
@@ -458,13 +469,13 @@ img, button:focus {
       padding: 5px;
       width: auto;
       position: absolute;
-      z-index: 201;
       max-width: 90%;
       top: 20%;
       left: 5%;
       font-size: 30px;
       padding: 20px;
-      font-weight: bold; }
+      font-weight: bold;
+      color: #0091ea; }
       @media (min-width: 480px) and (max-width: 719px) {
         .page-content .section-inner .title {
           font-size: 36px; } }
@@ -476,10 +487,10 @@ img, button:focus {
           font-size: 44px; } }
       @media (min-width: 1280px) and (max-width: 1439px) {
         .page-content .section-inner .title {
-          font-size: 48px; } }
+          font-size: 50px; } }
       @media (min-width: 1440px) {
         .page-content .section-inner .title {
-          font-size: 52px; } }
+          font-size: 60px; } }
       .page-content .section-inner .title .btn {
         background: #40c4ff;
         padding: 10px;
@@ -501,7 +512,7 @@ img, button:focus {
         .page-content .section-inner .title .btn:active {
           background: #00b0ff; }
       .page-content .section-inner .title .sub-title, .page-content .section-inner .title .sub-title .sub-title, .page-content .section-inner .title .sub-title p {
-        margin: 20px 0;
+        margin: 10px 0 50px;
         text-shadow: none;
         padding: 0 5%;
         font-weight: 300;
@@ -518,11 +529,9 @@ img, button:focus {
             font-size: 34px; } }
         @media (min-width: 1280px) and (max-width: 1439px) {
           .page-content .section-inner .title .sub-title, .page-content .section-inner .title .sub-title .sub-title, .page-content .section-inner .title .sub-title p {
-            margin: 50px 0;
             font-size: 34px; } }
         @media (min-width: 1440px) {
           .page-content .section-inner .title .sub-title, .page-content .section-inner .title .sub-title .sub-title, .page-content .section-inner .title .sub-title p {
-            margin: 50px 0 70px;
             font-size: 34px; } }
       .page-content .section-inner .title h1 {
         padding-right: 10%;

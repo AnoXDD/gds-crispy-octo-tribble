@@ -92,7 +92,7 @@ img, button:focus {
 
 //Nav bar
 .nav {
-  z-index: 1000;
+  z-index: 1;
   position: fixed;
   width: 100%;
   top: 0;
@@ -113,30 +113,47 @@ img, button:focus {
       transform: scale(1.1, 1.1);
     }
   }
+
+  &.hidden {
+    top: -50px;
+  }
 }
 
 //Fullpage: Horizontal slider. clean up later
 .content-slider {
   width: 100%;
-  height: 500px;
+  height: 100%;
   position: relative;
   top: 50%;
   transform: translateY(-50%);
-  background-color: lightblue;
+  background-color: $light-blue;
   float: left;
   overflow: auto;
   white-space: nowrap;
+  z-index: 20;
 
   .slider-inner {
     width: 9000px;
     height: 100%;
+    background: rgba(255, 255, 255, .8);
 
-    a {
+    .slider-item {
       float: left;
       width: 1000px;
       height: 100%;
       margin: 0 20px;
-      background-color: darkseagreen;
+
+      .slide-item-container {
+        width: 100%;
+        height: calc(100% - 100px);
+        margin: 25px;
+        border: 1px solid #000;
+      }
+
+      .slide-item-desc {
+        height: 50px;
+        text-align: center;
+      }
 
     }
 
@@ -195,13 +212,13 @@ img, button:focus {
       padding: 5px;
       width: auto;
       position: absolute;
-      z-index: 201;
       max-width: 90%;
       top: 20%;
       left: 5%;
       font-size: 30px;
       padding: 20px;
       font-weight: bold;
+      color: $darker-blue;
 
       @include large-phone {
         font-size: 36px;
@@ -213,10 +230,10 @@ img, button:focus {
         font-size: 44px;
       }
       @include medium-desktop {
-        font-size: 48px;
+        font-size: 50px;
       }
       @include large-desktop {
-        font-size: 52px;
+        font-size: 60px;
       }
 
       .btn {
@@ -250,7 +267,7 @@ img, button:focus {
 
       .sub-title, .sub-title p {
         @extend p;
-        margin: 20px 0;
+        margin: 10px 0 50px;
         text-shadow: none;
         padding: 0 5%;
         font-weight: 300;
@@ -267,11 +284,9 @@ img, button:focus {
           font-size: 34px;
         }
         @include medium-desktop {
-          margin: 50px 0;
           font-size: 34px;
         }
         @include large-desktop {
-          margin: 50px 0 70px;
           font-size: 34px;
         }
       }

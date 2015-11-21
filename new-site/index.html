@@ -8,7 +8,7 @@
 </head>
 <body>
 
-<div class="nav">
+<div class="nav hidden">
     <a href="#">-LOGO-</a>
     <a href="about.html">About</a>
     <a href="#">Members</a>
@@ -22,12 +22,25 @@
     <div class="section"
          style="background-image:url('http://www.gameguyz.com/sites/default/files/pictures_images/11.11.2014/1415687403_0.jpg');">
         <div class="section-inner">
+            <div class="title">
+                Dr. Eric Psychedelic Wonderland
+                <div class="sub-title">
+                    The video game we are building this year
+                </div>
+                <a class="btn">
+                    See Concept
+                </a>
+            </div>
             <div class="content-slider">
+                <a class="slider-expand"></a>
                 <div class="slider-inner">
-                    <a class="slider-item" data-nav="A" href="#">A</a>
-                    <a class="slider-item" data-nav="R" href="#">R</a>
-                    <a class="slider-item" data-nav="F" href="#">F</a>
-                    <a class="slider-item" data-nav="T" href="#">T</a>
+                    <div class="slider-item" data-nav="A" href="#">
+                        <div class="slide-item-container"><img alt="Hey I'm supposed to be n image"/></div>
+                        <div class="slide-item-desc">This is a description</div>
+                    </div>
+                    <div class="slider-item" data-nav="R" href="#">
+
+                    </div>
                 </div>
             </div>
         </div>
@@ -36,12 +49,12 @@
          style="background-image:url('http://www.pcgamewallpapers.net/1920x1080/starcraft-ii-legacy-of-the-void-cover.jpg');">
         <div class="section-inner">
             <div class="title">
-                Game Development Studio at UCSD
+                Dr. Eric Psychedelic Wonderland
                 <div class="sub-title">
-                    And this is not supposed to subtitle. We will put more introductory stuffs here.
+                    The video game we are building this year
                 </div>
                 <a class="btn">
-                    Learn more
+                    See Concept
                 </a>
             </div>
         </div>
@@ -62,7 +75,7 @@
 <script type="text/javascript" src="jquery-1.11.js"></script>
 <script type="text/javascript" src="jquery.fullPage.min.js"></script>
 <script>
-    $(document).ready(function () {
+    $(document).ready(function() {
         $('.page-content').fullpage({});
 
 //        $('.content-slider').on('mousedown touchmove scroll click ', function (event) {

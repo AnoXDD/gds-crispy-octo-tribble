@@ -1,6 +1,6 @@
 @import 'normalize';
 
-$large-phone-width: 480px;
+$phone-width: 480px;
 $tablet-width: 720px;
 $small-desktop-width: 1024px;
 $medium-desktop-width: 1280px;
@@ -19,8 +19,8 @@ $darker-blue: #0091ea;
 $orange: #ffab40;
 $dark-orange: #ff9100;
 
-@mixin large-phone {
-  @media (only-screen and min-width: #{$large-phone-width}) and (max-width: #{$tablet-width - 1px}) {
+@mixin phone {
+  @media (only-screen and min-width: 0) and (max-width: #{$tablet-width - 1px}) {
     @content;
   }
 }
@@ -31,9 +31,9 @@ $dark-orange: #ff9100;
   }
 }
 
-// The combination of large-phone and tablet
+// The combination of phone and tablet
 @mixin mobile {
-  @media (only-screen and min-width: #{$large-phone-width}) and (max-width: #{$small-desktop-width - 1px}) {
+  @media (only-screen and min-width: 0) and (max-width: #{$small-desktop-width - 1px}) {
     @content;
   }
 }
@@ -92,30 +92,61 @@ img, button:focus {
 
 //Nav bar
 .nav {
-  z-index: 1;
-  position: fixed;
+  text-align: center;
   width: 100%;
-  top: 0;
-  left: 0;
-  height: 50px;
-  display: flex;
-  justify-content: center;
-  background-color: $dark-blue;
-  & > * {
-    padding: 0 20px;
-    line-height: 50px;
-    text-decoration: none;
-    color: white;
+  z-index: 500;
+  div {
+    transition: top .4s ease;
+  }
 
-    @extend .btn-anim;
+  .logo {
+    position: fixed;
+    height: 45px;
+    overflow: hidden;
+    left: calc(50% - 22px);
+    z-index: 10000;
+    background: #000;
+    top: -100px;
 
-    &:hover {
-      transform: scale(1.1, 1.1);
+    img {
+      height: 45px;
+      width: 45px;
+    }
+  }
+
+  .actions {
+    z-index: 1;
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    background-color: $dark-blue;
+
+    a {
+      padding: 0 20px;
+      line-height: 50px;
+      text-decoration: none;
+      color: white;
+
+      @extend .btn-anim;
+
+      &:hover {
+        background-color: $blue;
+      }
     }
   }
 
   &.hidden {
-    top: -50px;
+    .logo {
+      top: 5px;
+    }
+
+    .actions {
+      top: -50px;
+    }
   }
 }
 
@@ -131,11 +162,95 @@ img, button:focus {
   overflow: auto;
   white-space: nowrap;
   z-index: 20;
+  transition: left .7s ease;
+  left: 100%;
+
+  // This will show after toggle class is added
+  &.processed {
+    left: calc(100% - 200px);
+
+    @include phone {
+      left: calc(100% - 50px);
+    }
+
+    @include tablet {
+      left: calc(100% - 100px);
+    }
+  }
+
+  &.expand {
+    left: 0;
+    .toggle svg {
+      transform: rotate(180deg);
+    }
+  }
+
+  .toggle {
+    height: 100%;
+    width: 200px;
+    display: inline-block;
+    background: $dark-blue;
+    position: relative;
+    transition: background .4s ease;
+
+    @include phone {
+      width: 50px;
+    }
+
+    @include tablet {
+      width: 100px;
+    }
+
+    svg {
+      position: absolute;
+      padding: 10px;
+      top: 50%;
+      left: 50%;
+      margin: -45px 0 0 -30px;
+      transition: transform .4s ease;
+
+      @include mobile {
+        zoom: .5;
+      }
+
+      polyline {
+        transition: stroke-width .4s ease;
+        @include mobile {
+          stroke-width: 5px;
+        }
+      }
+    }
+
+    &:hover {
+      background: $blue;
+      svg polyline {
+        stroke-width: 5px;
+      }
+    }
+
+    &:active {
+      background: $light-blue;
+      svg polyline {
+        stroke-width: 10px;
+      }
+    }
+  }
 
   .slider-inner {
+    position: absolute;
+    top: 0;
+    left: 200px;
     width: 9000px;
     height: 100%;
     background: rgba(255, 255, 255, .8);
+
+    @include phone {
+      left: 50px;
+    }
+
+    @include tablet {
+      left: 100px;
+    }
 
     .slider-item {
       float: left;
@@ -220,7 +335,7 @@ img, button:focus {
       font-weight: bold;
       color: $darker-blue;
 
-      @include large-phone {
+      @include phone {
         font-size: 36px;
       }
       @include tablet {
@@ -274,7 +389,7 @@ img, button:focus {
         color: black;
 
         font-size: 20px;
-        @include large-phone {
+        @include phone {
           font-size: 26px;
         }
         @include tablet {
@@ -297,7 +412,7 @@ img, button:focus {
         float: left;
         font-family: zekton, sans-serif;
         font-size: 42px;
-        @include large-phone {
+        @include phone {
           font-size: 56px;
         }
         @include tablet {
@@ -322,7 +437,7 @@ img, button:focus {
       height: auto;
 
       margin: 20px;
-      @include large-phone {
+      @include phone {
         margin: 30px;
       }
       @include tablet {
@@ -342,7 +457,7 @@ img, button:focus {
 
         margin-top: 10px;
         font-size: 17px;
-        @include large-phone {
+        @include phone {
           margin-top: 15px;
           font-size: 17px;
         }
@@ -367,7 +482,7 @@ img, button:focus {
 
         font-family: zekton, sans-serif;
         font-size: 32px;
-        @include large-phone {
+        @include phone {
           font-size: 46px;
         }
         @include tablet {
@@ -388,7 +503,7 @@ img, button:focus {
         margin: 0;
         font-family: zekton, sans-serif;
         font-size: 20px;
-        @include large-phone {
+        @include phone {
           font-size: 26px;
         }
         @include tablet {

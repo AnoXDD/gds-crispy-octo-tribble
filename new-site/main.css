@@ -377,6 +377,8 @@ img, button:focus {
 .nav {
   text-align: center;
   width: 100%;
+  height: 50px;
+  position: fixed;
   z-index: 500; }
   .nav div {
     transition: top .4s ease; }
@@ -413,93 +415,107 @@ img, button:focus {
   .nav.hidden .actions {
     top: -50px; }
 
-.content-slider {
-  width: 100%;
-  height: 100%;
+.content-wrapper {
+  width: 100vw;
+  height: 100vh;
   position: relative;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: #80d8ff;
-  float: left;
-  overflow: auto;
-  white-space: nowrap;
-  z-index: 20;
-  transition: left .7s ease;
-  left: 100%; }
-  .content-slider.processed {
-    left: calc(100% - 200px); }
-    @media (min-width: 0) and (max-width: 719px) {
-      .content-slider.processed {
-        left: calc(100% - 50px); } }
-    @media (min-width: 720px) and (max-width: 1023px) {
-      .content-slider.processed {
-        left: calc(100% - 100px); } }
-  .content-slider.expand {
-    left: 0; }
-    .content-slider.expand .toggle svg {
-      transform: rotate(180deg); }
-  .content-slider .toggle {
-    height: 100%;
-    width: 200px;
-    display: inline-block;
-    background: #00b0ff;
+  overflow: hidden;
+  pointer-events: none; }
+  .content-wrapper .content-slider {
+    width: calc(100vw + 50px);
+    height: calc(100vh + 50px);
     position: relative;
-    transition: background .4s ease; }
-    @media (min-width: 0) and (max-width: 719px) {
-      .content-slider .toggle {
-        width: 50px; } }
-    @media (min-width: 720px) and (max-width: 1023px) {
-      .content-slider .toggle {
-        width: 100px; } }
-    .content-slider .toggle svg {
-      position: absolute;
-      padding: 10px;
-      top: 50%;
-      left: 50%;
-      margin: -45px 0 0 -30px;
-      transition: transform .4s ease; }
-      @media (min-width: 0) and (max-width: 1023px) {
-        .content-slider .toggle svg {
-          zoom: .5; } }
-      .content-slider .toggle svg polyline {
-        transition: stroke-width .4s ease; }
-        @media (min-width: 0) and (max-width: 1023px) {
-          .content-slider .toggle svg polyline {
-            stroke-width: 5px; } }
-    .content-slider .toggle:hover {
-      background: #40c4ff; }
-      .content-slider .toggle:hover svg polyline {
-        stroke-width: 5px; }
-    .content-slider .toggle:active {
-      background: #80d8ff; }
-      .content-slider .toggle:active svg polyline {
-        stroke-width: 10px; }
-  .content-slider .slider-inner {
-    position: absolute;
-    top: 0;
-    left: 200px;
-    width: 9000px;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.8); }
-    @media (min-width: 0) and (max-width: 719px) {
-      .content-slider .slider-inner {
-        left: 50px; } }
-    @media (min-width: 720px) and (max-width: 1023px) {
-      .content-slider .slider-inner {
-        left: 100px; } }
-    .content-slider .slider-inner .slider-item {
-      float: left;
-      width: 1000px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #80d8ff;
+    float: left;
+    overflow: auto;
+    white-space: nowrap;
+    transition: left .7s ease;
+    z-index: 1000;
+    left: 100%;
+    pointer-events: auto; }
+    .content-wrapper .content-slider.processed {
+      left: calc(100% - 200px); }
+      @media (min-width: 0) and (max-width: 719px) {
+        .content-wrapper .content-slider.processed {
+          left: calc(100% - 50px); } }
+      @media (min-width: 720px) and (max-width: 1023px) {
+        .content-wrapper .content-slider.processed {
+          left: calc(100% - 100px); } }
+    .content-wrapper .content-slider.expand {
+      left: 0; }
+      .content-wrapper .content-slider.expand .toggle svg {
+        transform: rotate(180deg); }
+    .content-wrapper .content-slider .toggle {
       height: 100%;
-      margin: 0 20px; }
-      .content-slider .slider-inner .slider-item .slide-item-container {
-        width: 100%;
-        height: calc(100% - 100px);
-        margin: 25px;
-        border: 1px solid #000; }
-      .content-slider .slider-inner .slider-item .slide-item-desc {
-        height: 50px;
-        text-align: center; }
+      width: 200px;
+      display: inline-block;
+      background: #00b0ff;
+      position: relative;
+      transition: background .4s ease; }
+      @media (min-width: 0) and (max-width: 719px) {
+        .content-wrapper .content-slider .toggle {
+          width: 50px; } }
+      @media (min-width: 720px) and (max-width: 1023px) {
+        .content-wrapper .content-slider .toggle {
+          width: 100px; } }
+      .content-wrapper .content-slider .toggle svg {
+        position: absolute;
+        padding: 10px;
+        top: 50%;
+        left: 50%;
+        margin: -45px 0 0 -30px;
+        transition: transform .4s ease; }
+        @media (min-width: 0) and (max-width: 1023px) {
+          .content-wrapper .content-slider .toggle svg {
+            zoom: .5; } }
+        .content-wrapper .content-slider .toggle svg polyline {
+          transition: stroke-width .4s ease; }
+          @media (min-width: 0) and (max-width: 1023px) {
+            .content-wrapper .content-slider .toggle svg polyline {
+              stroke-width: 5px; } }
+      .content-wrapper .content-slider .toggle:hover {
+        background: #40c4ff; }
+        .content-wrapper .content-slider .toggle:hover svg polyline {
+          stroke-width: 5px; }
+      .content-wrapper .content-slider .toggle:active {
+        background: #80d8ff; }
+        .content-wrapper .content-slider .toggle:active svg polyline {
+          stroke-width: 10px; }
+    .content-wrapper .content-slider .slider-inner {
+      position: absolute;
+      top: 0;
+      left: 200px;
+      width: 9000px;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.8); }
+      @media (min-width: 0) and (max-width: 719px) {
+        .content-wrapper .content-slider .slider-inner {
+          left: 50px; } }
+      @media (min-width: 720px) and (max-width: 1023px) {
+        .content-wrapper .content-slider .slider-inner {
+          left: 100px; } }
+      .content-wrapper .content-slider .slider-inner .slider-item {
+        display: inline-block;
+        height: 100%;
+        margin: 0 30px;
+        width: calc(100vw - 300px); }
+        @media (min-width: 0) and (max-width: 719px) {
+          .content-wrapper .content-slider .slider-inner .slider-item {
+            padding: 10px 0;
+            width: calc(100vw - 140px); } }
+        @media (min-width: 720px) and (max-width: 1023px) {
+          .content-wrapper .content-slider .slider-inner .slider-item {
+            width: calc(100vw - 200px); } }
+        .content-wrapper .content-slider .slider-inner .slider-item .slide-item-container {
+          width: 100%;
+          height: calc(100% - 100px);
+          margin: 25px;
+          border: 1px solid #000; }
+        .content-wrapper .content-slider .slider-inner .slider-item .slide-item-desc {
+          height: 50px;
+          text-align: center; }
 
 .page-content {
   margin: 0;

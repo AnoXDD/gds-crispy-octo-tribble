@@ -355,7 +355,7 @@ img, button:focus {
     font-size: 30px;
     padding: 20px;
     font-weight: bold;
-    color: $dark-blue;
+    color: black;
 
     @include phone {
       font-size: 36px;
@@ -409,9 +409,9 @@ img, button:focus {
       text-shadow: none;
       padding: 0 5%;
       font-weight: 300;
-      color: black;
+      color: #888;
 
-      font-size: 20px;
+      font-size: 18px;
       @include phone {
         font-size: 26px;
       }

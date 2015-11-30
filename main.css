@@ -561,7 +561,7 @@ img, button:focus {
     font-size: 30px;
     padding: 20px;
     font-weight: bold;
-    color: #00b0ff; }
+    color: black; }
     @media (min-width: 0) and (max-width: 719px) {
       .page-content .title {
         font-size: 36px; } }
@@ -603,8 +603,8 @@ img, button:focus {
       text-shadow: none;
       padding: 0 5%;
       font-weight: 300;
-      color: black;
-      font-size: 20px; }
+      color: #888;
+      font-size: 18px; }
       @media (min-width: 0) and (max-width: 719px) {
         .page-content .title .sub-title, .page-content .title .sub-title .sub-title, .page-content .title .sub-title p {
           font-size: 26px; } }

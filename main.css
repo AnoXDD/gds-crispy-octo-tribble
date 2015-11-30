@@ -535,6 +535,8 @@ img, button:focus {
     background-position: center;
     margin: 0; }
     .page-content .section .slide {
+      height: 100%;
+      width: 100%;
       background: rgba(255, 255, 255, 0.85); }
   .page-content .scroll-for-more {
     position: absolute;
@@ -603,7 +605,7 @@ img, button:focus {
       text-shadow: none;
       padding: 0 5%;
       font-weight: 300;
-      color: #888;
+      color: #555;
       font-size: 18px; }
       @media (min-width: 0) and (max-width: 719px) {
         .page-content .title .sub-title, .page-content .title .sub-title .sub-title, .page-content .title .sub-title p {

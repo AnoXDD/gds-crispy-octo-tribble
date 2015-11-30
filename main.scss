@@ -320,6 +320,8 @@ img, button:focus {
     margin: 0;
 
     .slide {
+      height: 100%;
+width: 100%;
       background: rgba(255, 255, 255, .85);
     }
   }
@@ -409,7 +411,7 @@ img, button:focus {
       text-shadow: none;
       padding: 0 5%;
       font-weight: 300;
-      color: #888;
+      color: #555;
 
       font-size: 18px;
       @include phone {

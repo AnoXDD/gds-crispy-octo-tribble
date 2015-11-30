@@ -1,4 +1,5 @@
 @import 'normalize';
+//@import 'fullPage';
 
 $phone-width: 480px;
 $tablet-width: 720px;
@@ -158,57 +159,49 @@ img, button:focus {
   height: 100vh;
   position: relative;
   overflow: hidden;
-  pointer-events: none;
 
   .content-slider {
     width: calc(100vw + 50px);
     height: calc(100vh + 50px);
     position: relative;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: $light-blue;
     float: left;
-    overflow: auto;
+    overflow-x: auto;
+    overflow-y: hidden;
     white-space: nowrap;
     transition: left .7s ease;
     z-index: 1000;
-    left: 100%;
-    pointer-events: auto;
-
-    // This will show after toggle class is added
-    &.processed {
-      left: calc(100% - 200px);
-
-      @include phone {
-        left: calc(100% - 50px);
-      }
-
-      @include tablet {
-        left: calc(100% - 100px);
-      }
-    }
 
     &.expand {
-      left: 0;
-      .toggle svg {
-        transform: rotate(180deg);
+
+      .toggle {
+        position: fixed;
+        left: 0;
+
+        svg {
+          transform: rotate(180deg);
+        }
       }
     }
 
     .toggle {
-      height: 100%;
+      height: 100vh;
       width: 200px;
-      display: inline-block;
+      display: block;
       background: $dark-blue;
-      position: relative;
+      position: absolute;
+      left: calc(100vw - 200px);
+      top: 0;
       transition: background .4s ease;
+      z-index: 20;
 
       @include phone {
         width: 50px;
+        left: calc(100vw - 50px);
       }
 
       @include tablet {
         width: 100px;
+        left: calc(100vw - 100px);
       }
 
       svg {
@@ -246,53 +239,53 @@ img, button:focus {
       }
     }
 
-    .slider-inner {
-      position: absolute;
-      top: 0;
-      left: 200px;
-      width: 9000px;
-      height: 100%;
-      background: rgba(255, 255, 255, .8);
+    // Two buttons to navigate the images
+    .ctrl {
+      position: fixed;
+      z-index: 50;
 
-      @include phone {
-        left: 50px;
+      &:before {
+        display: block;
+        position: absolute;
+        content: "<";
+        height: 100vh;
+        width: 50px;
+        background: $light-blue;
       }
 
-      @include tablet {
-        left: 100px;
+      &.left {
+        left: 250px;
+
+        &:before {
+        }
       }
-
-      .slider-item {
-        display: inline-block;
-        height: 100%;
-        margin: 0 30px;
-        width: calc(100vw - 300px);
-
-        @include phone {
-          padding:10px 0;
-          width: calc(100vw - 140px);
-        }
-
-        @include tablet {
-          width: calc(100vw - 200px);
-        }
-
-        .slide-item-container {
-          width: 100%;
-          height: calc(100% - 100px);
-          margin: 25px;
-          border: 1px solid #000;
-        }
-
-        .slide-item-desc {
-          height: 50px;
-          text-align: center;
-        }
-
-      }
-
     }
+  }
+}
 
+.slide-inner {
+  // Add 20px to avoid overflow
+  width: calc(100vw - 20px);
+  padding: 70px 100px 0;
+
+  @include phone {
+    padding: 70px 50px 0;
+  }
+
+  @include tablet {
+    padding: 70px 70px 0;
+  }
+
+  .slide-item-container {
+    margin-left: 20px;
+    height: calc(100vh - 150px);
+    border: 1px solid #000;
+  }
+
+  .slide-item-desc {
+    padding:20px;
+    height: 50px;
+    text-align: center;
   }
 
 }
@@ -315,241 +308,233 @@ img, button:focus {
     margin: 0;
   }
 
-  .section-inner {
-    background-color: rgba(255, 255, 255, 0.8);
-    height: 100%;
-    width: 100%;
-    position: relative;
+  .scroll-for-more {
+    position: absolute;
+    width: 40px;
+    @include desktop {
+      width: 50px;
+    }
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
 
-    .scroll-for-more {
-      position: absolute;
-      width: 40px;
-      @include desktop {
-        width: 50px;
-      }
-      bottom: 5%;
-      left: 50%;
-      transform: translateX(-50%);
+    transition: opacity 0.5s;
+    &:hover {
+      opacity: 0.5;
+    }
+  }
 
-      transition: opacity 0.5s;
-      &:hover {
-        opacity: 0.5;
-      }
+  h1, p {
+    position: static;
+    display: block;
+    margin: 0;
+    padding: 0;
+  }
+
+  .title {
+    width: auto;
+    position: absolute;
+    max-width: 90vw;
+    top: 20vh;
+    left: 5vw;
+    font-size: 30px;
+    padding: 20px;
+    font-weight: bold;
+    color: $darker-blue;
+
+    @include phone {
+      font-size: 36px;
+    }
+    @include tablet {
+      font-size: 40px;
+    }
+    @include small-desktop {
+      font-size: 44px;
+    }
+    @include medium-desktop {
+      font-size: 50px;
+    }
+    @include large-desktop {
+      font-size: 60px;
     }
 
-    h1, p {
-      position: static;
+    .btn {
+      background: $blue;
+      padding: 10px;
       display: block;
-      margin: 0;
-      padding: 0;
+      font-size: 25px;
+      border-radius: 4px;
+      width: 250px;
+      text-align: center;
+      color: #fff;
+      margin-top: 30px;
+      box-shadow: 1px 1px 1px #888;
+
+      @extend .btn-anim;
+
+      @include mobile {
+        font-size: 15px;
+        width: 150px;
+      }
+
+      &:hover {
+        background: $darker-blue;
+        box-shadow: 1px 3px 1px #888;
+      }
+
+      &:active {
+        background: $dark-blue;
+      }
     }
 
-    .title {
-      padding: 5px;
-      width: auto;
-      position: absolute;
-      max-width: 90%;
-      top: 20%;
-      left: 5%;
-      font-size: 30px;
-      padding: 20px;
-      font-weight: bold;
-      color: $darker-blue;
+    .sub-title, .sub-title p {
+      @extend p;
+      margin: 10px 0 50px;
+      text-shadow: none;
+      padding: 0 5%;
+      font-weight: 300;
+      color: black;
 
+      font-size: 20px;
       @include phone {
-        font-size: 36px;
+        font-size: 26px;
       }
       @include tablet {
-        font-size: 40px;
+        font-size: 30px;
       }
       @include small-desktop {
-        font-size: 44px;
+        font-size: 34px;
       }
       @include medium-desktop {
-        font-size: 50px;
+        font-size: 34px;
       }
       @include large-desktop {
+        font-size: 34px;
+      }
+    }
+    h1 {
+      padding-right: 10%;
+      white-space: nowrap;
+      font-weight: bold;
+      float: left;
+      font-family: zekton, sans-serif;
+      font-size: 42px;
+      @include phone {
+        font-size: 56px;
+      }
+      @include tablet {
         font-size: 60px;
       }
-
-      .btn {
-        background: $blue;
-        padding: 10px;
-        display: block;
-        font-size: 25px;
-        border-radius: 4px;
-        width: 250px;
-        text-align: center;
-        color: #fff;
-        margin-top: 30px;
-        box-shadow: 1px 1px 1px #888;
-
-        @extend .btn-anim;
-
-        @include mobile {
-          font-size: 15px;
-          width: 150px;
-        }
-
-        &:hover {
-          background: $darker-blue;
-          box-shadow: 1px 3px 1px #888;
-        }
-
-        &:active {
-          background: $dark-blue;
-        }
-      }
-
-      .sub-title, .sub-title p {
-        @extend p;
-        margin: 10px 0 50px;
-        text-shadow: none;
-        padding: 0 5%;
-        font-weight: 300;
-        color: black;
-
-        font-size: 20px;
-        @include phone {
-          font-size: 26px;
-        }
-        @include tablet {
-          font-size: 30px;
-        }
-        @include small-desktop {
-          font-size: 34px;
-        }
-        @include medium-desktop {
-          font-size: 34px;
-        }
-        @include large-desktop {
-          font-size: 34px;
-        }
-      }
-      h1 {
-        padding-right: 10%;
-        white-space: nowrap;
-        font-weight: bold;
-        float: left;
-        font-family: zekton, sans-serif;
-        font-size: 42px;
-        @include phone {
-          font-size: 56px;
-        }
-        @include tablet {
-          font-size: 60px;
-        }
-        @include small-desktop {
-          font-size: 84px;
-        }
-        @include medium-desktop {
-          font-size: 104px;
-        }
-        @include large-desktop {
-          font-size: 124px;
-        }
-      }
-    }
-
-    .content {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      height: auto;
-
-      margin: 20px;
-      @include phone {
-        margin: 30px;
-      }
-      @include tablet {
-        margin: 50px;
-      }
       @include small-desktop {
-        margin: 90px;
+        font-size: 84px;
       }
       @include medium-desktop {
-        margin: 110px;
+        font-size: 104px;
       }
       @include large-desktop {
-        margin: 150px;
-      }
-
-      p {
-
-        margin-top: 10px;
-        font-size: 17px;
-        @include phone {
-          margin-top: 15px;
-          font-size: 17px;
-        }
-        @include tablet {
-          margin-top: 20px;
-          font-size: 18px;
-        }
-        @include small-desktop {
-          margin-top: 30px;
-          font-size: 20px;
-        }
-        @include medium-desktop {
-          margin-top: 30px;
-          font-size: 22px;
-        }
-        @include large-desktop {
-          margin-top: 30px;
-          font-size: 24px;
-        }
-      }
-      h1 {
-
-        font-family: zekton, sans-serif;
-        font-size: 32px;
-        @include phone {
-          font-size: 46px;
-        }
-        @include tablet {
-          font-size: 50px;
-        }
-        @include small-desktop {
-          font-size: 54px;
-        }
-        @include medium-desktop {
-          font-size: 69px;
-        }
-        @include large-desktop {
-          font-size: 78px;
-        }
-      }
-      h2 {
-        padding-left: 10%;
-        margin: 0;
-        font-family: zekton, sans-serif;
-        font-size: 20px;
-        @include phone {
-          font-size: 26px;
-        }
-        @include tablet {
-          font-size: 30px;
-        }
-        @include small-desktop {
-          font-size: 34px;
-        }
-        @include medium-desktop {
-          font-size: 38px;
-        }
-        @include large-desktop {
-          font-size: 42px;
-        }
+        font-size: 124px;
       }
     }
-    .content.right {
-      h1, p {
-        float: right;
-        text-align: right;
+  }
+
+  .content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: auto;
+
+    margin: 20px;
+    @include phone {
+      margin: 30px;
+    }
+    @include tablet {
+      margin: 50px;
+    }
+    @include small-desktop {
+      margin: 90px;
+    }
+    @include medium-desktop {
+      margin: 110px;
+    }
+    @include large-desktop {
+      margin: 150px;
+    }
+
+    p {
+
+      margin-top: 10px;
+      font-size: 17px;
+      @include phone {
+        margin-top: 15px;
+        font-size: 17px;
       }
-      h2 {
-        float: right;
-        padding-right: 10%;
+      @include tablet {
+        margin-top: 20px;
+        font-size: 18px;
       }
+      @include small-desktop {
+        margin-top: 30px;
+        font-size: 20px;
+      }
+      @include medium-desktop {
+        margin-top: 30px;
+        font-size: 22px;
+      }
+      @include large-desktop {
+        margin-top: 30px;
+        font-size: 24px;
+      }
+    }
+    h1 {
+
+      font-family: zekton, sans-serif;
+      font-size: 32px;
+      @include phone {
+        font-size: 46px;
+      }
+      @include tablet {
+        font-size: 50px;
+      }
+      @include small-desktop {
+        font-size: 54px;
+      }
+      @include medium-desktop {
+        font-size: 69px;
+      }
+      @include large-desktop {
+        font-size: 78px;
+      }
+    }
+    h2 {
+      padding-left: 10%;
+      margin: 0;
+      font-family: zekton, sans-serif;
+      font-size: 20px;
+      @include phone {
+        font-size: 26px;
+      }
+      @include tablet {
+        font-size: 30px;
+      }
+      @include small-desktop {
+        font-size: 34px;
+      }
+      @include medium-desktop {
+        font-size: 38px;
+      }
+      @include large-desktop {
+        font-size: 42px;
+      }
+    }
+  }
+  .content.right {
+    h1, p {
+      float: right;
+      text-align: right;
+    }
+    h2 {
+      float: right;
+      padding-right: 10%;
     }
   }
 

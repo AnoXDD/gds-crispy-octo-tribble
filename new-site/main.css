@@ -500,11 +500,19 @@ img, button:focus {
       padding: 70px 70px 0; } }
   .slide-inner .slide-item-container {
     margin-left: 20px;
-    height: calc(100vh - 150px);
-    border: 1px solid #000; }
+    height: calc(100vh - 250px);
+    border: 1px solid #000;
+    text-align: center; }
+    .slide-inner .slide-item-container span, .slide-inner .slide-item-container img {
+      vertical-align: middle; }
+    .slide-inner .slide-item-container span {
+      height: 100%;
+      display: inline-block; }
   .slide-inner .slide-item-desc {
-    padding: 20px;
-    height: 50px;
+    padding: 50px;
+    height: 150px;
+    font-size: 30px;
+    font-weight: lighter;
     text-align: center; }
 
 .page-content {

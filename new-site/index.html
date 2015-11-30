@@ -28,7 +28,7 @@
     <script type="text/javascript" src="jquery.fullPage.min.js"></script>
     <script type="text/template" id="underscore">
         <% _.each(data.sections, function(section) { %>
-        <div class="section" style="<% section.background? print('background: ' + section.background + ';'): print('') %>" >
+        <div class="section" style="<% section.background? print('background: ' + section.background + ';'): print('') %>">
             <% if (section.slides.titlePage) { %>
             <div class="slide">
                 <div class="title">
@@ -37,7 +37,7 @@
                     <div class="sub-title"><%= section.slides.titlePage.subTitle %></div>
                     <% }
                     if (section.slides.titlePage.btn) { %>
-                    <a class="btn"><%= section.slides.titlePage.btn %></a>
+                    <a class="btn" href="section.slides.titlePage.btn.href? section.slides.titlePage.btn.href: 'javascript:;'"><%= section.slides.titlePage.btn.title %></a>
                     <% } %>
                 </div>
             </div>
@@ -46,7 +46,7 @@
             _.each(section.slides.contents, function(content) { %>
             <div class="slide">
                 <div class="slide-inner">
-                    <div class="slide-item-container"><img src="<%= content.image %>" /></div>
+                    <div class="slide-item-container"><span></span><img src="<%= content.image %>" /></div>
                     <div class="slide-item-desc"><%= content.desc %></div>
                 </div>
             </div>
@@ -84,7 +84,9 @@
                             titlePage: {
                                 title: "Game Development Studio at UCSD",
                                 subTitle: "We are a group of college students dedicated to creating awesome video games",
-                                btn: "Check us out!"
+                                btn: {
+                                    title: "Check us out!"
+                                }
                             }
                         }
                     }, {
@@ -93,7 +95,9 @@
                             titlePage: {
                                 title: "Unfold",
                                 subTitle: "An intriging maze game we developed last year",
-                                btn: "Learn more"
+                                btn: {
+                                    title: "Learn more"
+                                }
                             }
                         }
                     }

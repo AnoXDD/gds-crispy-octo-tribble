@@ -278,13 +278,26 @@ img, button:focus {
 
   .slide-item-container {
     margin-left: 20px;
-    height: calc(100vh - 150px);
+    height: calc(100vh - 250px);
     border: 1px solid #000;
+    text-align: center;
+
+   span, img {
+      vertical-align: middle;
+    }
+
+    // The helper to center-align the thing
+    span {
+      height: 100%;
+      display: inline-block;
+    }
   }
 
   .slide-item-desc {
-    padding:20px;
-    height: 50px;
+    padding:50px;
+    height: 150px;
+    font-size:30px;
+    font-weight:lighter;
     text-align: center;
   }
 

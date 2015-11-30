@@ -49,5 +49,5 @@ function initSlider() {
 }
 
 $(document).ready(function() {
-    
+    enableNavBar();
 })

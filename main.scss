@@ -287,6 +287,12 @@ img, button:focus {
       vertical-align: middle;
     }
 
+    img {
+      // 021316: Used to center align the images
+      margin-left: auto;
+      margin-right:auto;
+    }
+
     // The helper to center-align the thing
     span {
       display: inline-block;
@@ -323,7 +329,7 @@ img, button:focus {
 
     .slide {
       height: 100%;
-width: 100%;
+      width: 100%;
       background: rgba(255, 255, 255, .85);
     }
   }

@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <title>Members | Game Development Studio</title>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="../main.css">
-    <link rel="icon" type="image/png" href="../img/favicon.png">
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <link rel="icon" type="image/png" href="img/favicon.png">
 </head>
 <body>
 
 <div class="nav hidden">
-    <div class="logo" href="javascript:;"><img alt="logo" src="../img/logo.png"></div>
+    <div class="logo" href="javascript:;"><img alt="logo" src="img/logo.png"></div>
     <div class="actions">
         <a href="/index.html" style="font-weight:bolder">Home</a>
         <a href="/about.html">About</a>
@@ -20,115 +20,127 @@
     </div>
 </div>
 
-<div class="page-content"></div>
+<div class="options">
+
+</div>
+<div class="page-content member">
+    <div class="isotope">
+        <div class="element-item transition metal " data-category="transition">
+            <p class="name">Mercury Mercury</p>
+            <p class="position">Hg</p>
+            <p class="number">80</p>
+            <p class="weight">200.59</p>
+        </div>
+        <div class="element-item metalloid " data-category="metalloid">
+            <p class="name">TelluriumMercur y</p>
+            <p class="position">Te</p>
+            <p class="number">52</p>
+            <p class="weight">127.6</p>
+        </div>
+        <div class="element-item element-item-height2" data-category="post-transition">
+            <p class="name">Bismuth</p>
+            <p class="position">Bi</p>
+            <p class="number">83</p>
+            <p class="weight">208.980</p>
+        </div>
+        <div class="element-item post-transition metal " data-category="post-transition">
+            <p class="name">Lead</p>
+            <p class="position">Pb</p>
+            <p class="number">82</p>
+            <p class="weight">207.2</p>
+        </div>
+        <div class="element-item element-item-height2 metal " data-category="transition">
+            <p class="name">Gold</p>
+            <p class="position">Au</p>
+            <p class="number">79</p>
+            <p class="weight">196.967</p>
+        </div>
+        <div class="element-item alkali metal element-item-height2" data-category="alkali">
+            <p class="name">Potassium</p>
+            <p class="position">K</p>
+            <p class="number">19</p>
+            <p class="weight">39.0983</p>
+        </div>
+        <div class="element-item-height2 element-item " data-category="alkaline-earth">
+            <p class="name">Calcium</p>
+            <p class="position">Ca</p>
+            <p class="number">20</p>
+            <p class="weight">40.078</p>
+        </div>
+        <div class="element-item-width2 element-item-height2 element-item" data-category="transition">
+            <p class="name">Rhenium</p>
+            <p class="position">Re</p>
+            <p class="number">75</p>
+            <p class="weight">186.207</p>
+        </div>
+        <div class="element-item post-transition metal " data-category="post-transition">
+            <p class="name">Thallium</p>
+            <p class="position">Tl</p>
+            <p class="number">81</p>
+            <p class="weight">204.383</p>
+        </div>
+        <div class="element-item-width2 element-item" data-category="metalloid">
+            <p class="name">Antimony</p>
+            <p class="position">Sb</p>
+            <p class="number">51</p>
+            <p class="weight">121.76</p>
+        </div>
+        <div class="element-item transition metal " data-category="transition">
+            <p class="name">Cobalt</p>
+            <p class="position">Co</p>
+            <p class="number">27</p>
+            <p class="weight">58.933</p>
+        </div>
+        <div class="element-item lanthanoid metal inner-transition " data-category="lanthanoid">
+            <p class="name">Ytterbium</p>
+            <p class="position">Yb</p>
+            <p class="number">70</p>
+            <p class="weight">173.054</p>
+        </div>
+        <div class="element-item noble-gas nonmetal " data-category="noble-gas">
+            <p class="name">Argon</p>
+            <p class="position">Ar</p>
+            <p class="number">18</p>
+            <p class="weight">39.948</p>
+        </div>
+        <div class="element-item-width2 element-item" data-category="diatomic">
+            <p class="name">Nitrogen</p>
+            <p class="position">N</p>
+            <p class="number">7</p>
+            <p class="weight">14.007</p>
+        </div>
+        <div class="element-item-height2 actinoid element-item metal inner-transition " data-category="actinoid">
+            <p class="name">Uranium</p>
+            <p class="position">U</p>
+            <p class="number">92</p>
+            <p class="weight">238.029</p>
+        </div>
+        <div class="element-item element-item-height2 metal inner-transition " data-category="actinoid">
+            <p class="name">Plutonium</p>
+            <p class="position">Pu</p>
+            <p class="number">94</p>
+            <p class="weight">(244)</p>
+        </div>
+    </div>
+</div>
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/2.2.2/isotope.pkgd.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
 
 <script type="text/template" id="underscore">
-    <% _.each(data.sections, function(section) { %>
-    <div class="section <% section.autoHeight? print('fp-auto-height'): print('') %>" style="<% section.background? print('background-image: url(\'' + section.background + '\');'): print('') %>">
-        <% if (section.slides.titlePage) { %>
-        <div class="slide">
-            <div class="title">
-                <%= section.slides.titlePage.title %>
-                <% if (section.slides.titlePage.subTitle) { %>
-                <div class="sub-title"><%= section.slides.titlePage.subTitle %></div>
-                <% }
-                if (section.slides.titlePage.btn) {
-                if (section.slides.titlePage.btn.custom) { %>
-                <div><%= section.slides.titlePage.btn.title %></div>
-                <% } else { %>
-                <a class="btn" target="_blank"
-                   href="<% section.slides.titlePage.btn.href? print(section.slides.titlePage.btn.href): print('javascript:;') %>">
-                    <%= section.slides.titlePage.btn.title %>
-                </a>
-                <% }
-                } %>
-            </div>
+    <% _.each(data.members, function(member) { %>
+    <div class="element-item <% member.layout? print(member.layout): print('') %>" style="background-image: url('<%= member.profile %>')">
+        <div class="element-item-inner">
+            <p class="name"><%= member.name %></p>
+            <p class="position"><%= member.position %></p>
         </div>
-        <% }
-        if (section.slides.video) { %>
-        <div class="slide">
-            <div class="slide-inner">
-                <div class="slide-item-container">
-                    <iframe width="100%" height="100%" src="<%= section.slides.video.src %>" frameborder="0" allowfullscreen></iframe>
-                </div>
-                <div class="slide-item-desc"><%= section.slides.video.desc %></div>
-            </div>
-        </div>
-        <% }
-        if (section.slides.custom) { %>
-        <div class="slide">
-            <div class="slide-inner">
-                <div class="slide-item-container"><%= section.slides.custom.content %></div>
-                <div class="slide-item-desc"><%= section.slides.custom.desc %></div>
-            </div>
-        </div>
-
-        <% }
-        if (section.slides.contents) {
-        _.each(section.slides.contents, function(content) { %>
-        <div class="slide">
-            <div class="slide-inner">
-                <div class="slide-item-container"><span></span><img src="<%= content.image %>" /></div>
-                <div class="slide-item-desc"><%- content.desc %></div>
-            </div>
-        </div>
-        <% }); %>
-        <% } %>
     </div>
     <% }); %>
 </script>
-<script>
-    $(document).ready(function() {
-        // Read the content from template
-        _.templateSettings.variable = "data";
-        var template = _.template($("#underscore").html());
-        var data = {
-            sections: [
-                {
-                    background: "../img/unfold_logo.png",
-                    slides: {
-                        titlePage: {
-                            title: "Unfold",
-                            subTitle: "The video game we developed last year",
-                            btn: {
-                                title: 'Learn more',
-                                href: "unfold.html"
-                            }
-                        }
-                    }
-                }, {
-                    background: "../img/dreric_1.jpg",
-                    slides: {
-                        titlePage: {
-                            title: "Dr. Eric Psychedelic Wonderland",
-                            subTitle: "The video game we are building this year",
-                            btn: {
-                                title: "Fork on GitHub",
-                                href: "https://github.com/GameDevStudioUCSD/DrEric"
-                            }
-                        },
-                        contents: [{
-                            image: "img/dreric_2.jpg",
-                            desc: "The cute logo"
-                        }, {
-                            image: "img/dreric_3.jpg",
-                            desc: "Basic demo of this game"
-                        }]
-                    }
-                }
-            ]
-        };
-
-        $(".page-content").html(template(data));
-
-        $('.page-content').fullpage({});
-    });
-</script>
-<script type="text/javascript" src="../main.js"></script>
+<script type="text/javascript" src="main.js"></script>
+<script type="text/javascript" src="members.js"></script>
 
 </body>
 </html>

@@ -290,7 +290,7 @@ img, button:focus {
     img {
       // 021316: Used to center align the images
       margin-left: auto;
-      margin-right:auto;
+      margin-right: auto;
     }
 
     // The helper to center-align the thing
@@ -316,6 +316,98 @@ img, button:focus {
   height: 100vh;
   width: 100%;
   padding: 0;
+
+  &.member {
+    background: #262524;
+    min-height: 100vh;
+    height: auto;
+    padding: 10vh 10vw;
+    // Isotope compartment and stuffs in members.html
+    .isotope {
+      // Change these variables for more experimental layouts
+      // If you are about to change $isotope-margin and $isotope-element-width, make sure to also change it in
+      // `members.js`. Search for #isotopeWidth, and modify the value following the instructions there
+      $isotope-padding: 20;
+      $isotope-margin: 5;
+      $isotope-element-width: 150;
+
+      background: black;
+      margin: 5% auto;
+      padding: $isotope-padding + px;
+      border-radius: 5px;
+
+      @include phone {
+        width: (2 * $isotope-element-width + 4 * $isotope-margin + 2 * $isotope-padding) + px;
+        zoom: .7;
+      }
+
+      @include tablet {
+        width: (3 * $isotope-element-width + 6 * $isotope-margin + 2 * $isotope-padding) + px
+      }
+
+      @include small-desktop {
+        width: (5 * $isotope-element-width + 10 * $isotope-margin + 2 * $isotope-padding) + px;
+      }
+
+      @include medium-desktop {
+        width: (6 * $isotope-element-width + 12 * $isotope-margin + 2 * $isotope-padding) + px;
+      }
+
+      @include large-desktop {
+        width: (7 * $isotope-element-width + 14 * $isotope-margin + 2 * $isotope-padding) + px;
+      }
+
+      .element-item {
+        position: relative;
+        height: $isotope-element-width + px;
+        width: $isotope-element-width + px;
+        color: white;
+        margin: $isotope-margin + px;
+        border-radius: 5px;
+        background: $dark-blue;
+        padding: 5px;
+        overflow: hidden;
+        background-size: cover;
+        background-position: center;
+
+        &.element-item-width2 {
+          width: (($isotope-element-width + $isotope-margin) * 2) + px;
+        }
+
+        &.element-item-height2 {
+          height: (($isotope-element-width + $isotope-margin) * 2) + px;
+        }
+
+        .element-item-inner {
+          position: absolute;
+          top:0;
+          left:0;
+          width: 100%;
+          height: 100%;
+          background-color: rgba(0, 0, 0, 0.5);
+          padding:5px;
+        }
+
+        .name {
+          font-size: 23px;
+          font-weight: bold;
+          width: 100%;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+
+        .position {
+          font-size: 15px;
+          padding: 5px;
+          position: absolute;
+          bottom: 0px;
+          right: 0px;
+          text-align: right;
+        }
+      }
+
+    }
+  }
 
   .section {
     height: 100%;

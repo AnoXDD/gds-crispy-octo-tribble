@@ -16,15 +16,15 @@ function initContents() {
             {
                 profile: "img/members/angryeric.png",
                 name: "Eric Cheng",
-                position: "President from abroad"
+                position: "President"
             }, {
                 profile: "img/members/michael.png",
                 name: "Michael Gonzalez",
-                position: "Acting President"
+                position: "Vice President"
             }, {
                 profile: "img/members/gavin.jpg",
                 name: "Gavin Badillo",
-                position: "Acting President and Treasurer"
+                position: "Treasurer"
             }, {
                 profile: "img/members/Isabelle.png",
                 name: "Isabelle Cabana",
@@ -36,11 +36,9 @@ function initContents() {
             }, {
                 profile: "img/members/sher.jpg",
                 name: "Sher Zahed",
-                position: "Development Manager"
             }, {
                 profile: "img/members/anhquan.png",
                 name: "AnhQuan Nguyen",
-                position: "Development Manager"
             }, {
                 profile: "img/members/steven.png",
                 name: "Steven Lee",
@@ -52,7 +50,6 @@ function initContents() {
             }, {
                 profile: "img/members/mai.png",
                 name: "Mai Dinh",
-                position: "Development Manager"
             }, {
                 profile: "img/members/peter.png",
                 name: "Peter Vugia"
@@ -65,25 +62,12 @@ function initContents() {
             }, {
                 profile: "img/members/mehul.jpg",
                 name: "Mehul Goel"
-            }, {
-                profile: "img/members/rachit.jpg",
-                name: "Rachit Sengupta"
-            }, {
-                profile: "img/members/kirill.jpg",
-                name: "Kirill Sydykov"
-            }, {
-                profile: "img/members/raghav.png",
-                name: "Raghav Ravisankar"
-            }, {
+            }, 
+            {
                 name: "Julian Al-Haddad"
             }, {
                 name: "Richard Wan"
-            }, {
-                name: "Eswar Dhinakaran"
-            }, {
-                name: "Erik Olson",
-                position: "Community Advisor"
-            }
+            }, 
         ]
     };
 

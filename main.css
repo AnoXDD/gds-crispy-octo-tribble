@@ -568,7 +568,8 @@ img, button:focus {
         padding: 5px;
         overflow: hidden;
         background-size: cover;
-        background-position: center; }
+        background-position: center;
+        opacity: 1; }
         .page-content.member .isotope .element-item.element-item-width2 {
           width: 310px; }
         .page-content.member .isotope .element-item.element-item-height2 {
@@ -580,7 +581,18 @@ img, button:focus {
           width: 100%;
           height: 100%;
           background-color: rgba(0, 0, 0, 0.5);
+          transition: .4s ease;
           padding: 5px; }
+        .page-content.member .isotope .element-item img.alt {
+          display: none;
+          height: 100%;
+          transition: .5s ease;
+          position: absolute;
+          top: 0;
+          left: 0;
+          border-radius: 5px; }
+        .page-content.member .isotope .element-item .desc {
+          display: none; }
         .page-content.member .isotope .element-item .name {
           font-size: 23px;
           font-weight: bold;
@@ -594,6 +606,28 @@ img, button:focus {
           bottom: 0px;
           right: 0px;
           text-align: right; }
+        .page-content.member .isotope .element-item:hover .element-item-inner {
+          background-color: transparent; }
+        .page-content.member .isotope .element-item.click {
+          width: 465px;
+          height: 465px; }
+          @media (min-width: 0) and (max-width: 719px) {
+            .page-content.member .isotope .element-item.click {
+              width: 310px;
+              height: 310px; } }
+          .page-content.member .isotope .element-item.click .element-item-inner {
+            transition: none;
+            background-color: #000; }
+          .page-content.member .isotope .element-item.click .name {
+            text-align: right; }
+          .page-content.member .isotope .element-item.click img.alt {
+            display: block; }
+          .page-content.member .isotope .element-item.click .desc {
+            margin-left: 50%;
+            padding: 20px;
+            display: block; }
+      .page-content.member .isotope.focus .element-item:not(.click) {
+        opacity: .2; }
   .page-content .section {
     height: 100%;
     width: 100%;

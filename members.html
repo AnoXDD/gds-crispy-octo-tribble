@@ -38,6 +38,13 @@
         <div class="element-item-inner">
             <img class="alt" src="<%= member.alt %>" />
             <p class="name"><%= member.name %></p>
+            <% if (member.tags) { %>
+            <div class="tags">
+                <% _.each(member.tags, function(tag) { %>
+                <span><%= tag %></span>
+                <% }); %>
+            </div>
+            <% } %>
             <div class="desc"><%= member.desc %></div>
             <p class="position"><%= member.position %></p>
         </div>

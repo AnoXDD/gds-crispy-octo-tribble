@@ -49,7 +49,8 @@ function initContents() {
                 name: "Runjie Guan",
                 position: "Historian"
             }, {
-                profile: "img/members/sher.jpg",
+                profile: "img/members/sher_2016.jpg",
+                alt: 1,
                 name: "Sher Zahed",
             }, {
                 profile: "img/members/anhquan_2016.jpg",
@@ -198,7 +199,7 @@ function initIsotope() {
  * @author Anoxic
  */
 function enableMoreDetail() {
-    $(".isotope .element-item").click(function () {
+    $(".isotope .element-item").click(function() {
         // Tests if the user doesn't want to see this face for now
         if ($(this).hasClass("click")) {
             // Yep the user does
@@ -211,7 +212,7 @@ function enableMoreDetail() {
             $(this).addClass("click");
         }
 
-         $(".isotope").isotope("layout");
+        $(".isotope").isotope("layout");
     })
 }
 

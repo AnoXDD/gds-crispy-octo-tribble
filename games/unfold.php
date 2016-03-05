@@ -1,27 +1,13 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Home | Game Development Studio</title>
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="../main.css">
-    <link rel="icon" type="image/png" href="../img/favicon.png">
+    <?php include $_SERVER['DOCUMENT_ROOT'] . '/header.php'; ?>
+    <title>Unfold | Game Development Studio</title>
 </head>
 <body>
-
-    <div class="nav hidden">
-        <div class="logo" href="javascript:;"><img alt="logo" src="../img/logo.png"></div>
-        <div class="actions">
-            <a href="/index.php" style="font-weight:bolder">Home</a>
-            <a href="/about/index.php">About</a>
-            <a href="/members/index.php">Members</a>
-            <a href="/games/index.php">Games</a>
-            <a href="/contact/index.php">Contact</a>
-        </div>
-    </div>
+<?php include $_SERVER['DOCUMENT_ROOT'] . '/nav.php'; ?>
 
     <div class="page-content"></div>
-
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>

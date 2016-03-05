@@ -1,7 +1,9 @@
 <div id="nav">
-    <div id="nav-logo">
-        <img src="/img/logo.png"/>
-    </div>
+    <a href="/">
+        <div id="nav-logo">
+            <img src="/img/logo.png"/>
+        </div>
+    </a>
     <div id="nav-menu">
         <div class="scroll-hide">
             <div class="scroll-fix">

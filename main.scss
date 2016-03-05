@@ -93,44 +93,86 @@ img, button:focus {
 }
 
 $nav-height: 50px;
-$nav-item-width-desktop: 120px;
-$nav-width-mobile: 480px;
+$nav-item-width-desktop: 150px;
+$nav-width-mobile: 450px;
 #nav {
   position: fixed;
   width: 100%;
   top: 0;
   height: auto;
   z-index: 500;
+
+
   a {
     text-decoration: none;
   }
 }
 
 #nav-logo {
+  background-color: $blue;
   width: 100%;
   height: $nav-height;
   position: relative;
-  background-color: pink;
+  z-index: 502;
+  img {
+    position: relative;
+    transition: all 0.5s;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-left: 15px;
+  }
+  @include tablet {
+    position: absolute;
+    width: $nav-item-width-desktop;
+    left: 50%;
+    transform: translateX(-50%);
+    img {
+      margin: 0;
+      position: relative;
+      left:50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
   @include desktop {
     position: absolute;
     width: $nav-item-width-desktop;
     left: 50%;
     transform: translateX(-50%);
+    img {
+      margin: 0;
+      position: relative;
+      left:50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+}
+
+@include desktop {
+  #nav-logo:hover img {
+    transform: scale(1.2, 1.2) translate(-40%, -40%);
+    transition: all 0.5s;
   }
 }
 
 #nav-menu {
+  background-color: $blue;
   height: $nav-height;
   overflow: hidden;
   padding: 0;
   width: 100%;
   float: left;
   position: relative;
+  z-index: 501;
+  @include tablet {
+    float: none;
+    position: absolute;
+  }
   @include desktop {
     float: none;
     position: absolute;
   }
-  background-color: lightpink;
 
   .scroll-hide {
     width: 100%;
@@ -157,15 +199,16 @@ $nav-width-mobile: 480px;
       height: $nav-height;
       overflow-y: hidden;
       @include tablet {
-        width: $nav-width-mobile + $nav-item-width-desktop;
+        width: #{5 * $nav-item-width-desktop};
       }
       @include desktop {
-        width: $nav-width-mobile + $nav-item-width-desktop;
+        width: #{5 * $nav-item-width-desktop};
       }
     }
     a {
+      transition: font 0.5s;
       position: relative;
-      color: orangered;
+      color: white;
       font-size: 20px;
       padding: 0 20px;
       margin: 0;
@@ -175,19 +218,27 @@ $nav-width-mobile: 480px;
       width: auto;
       float: left;
       @include tablet {
-        width: 120px;
+        width: $nav-item-width-desktop;
       }
       @include desktop {
-        width: 120px;
+        width: $nav-item-width-desktop;
       }
 
       &:hover {
-        border-bottom: 3px solid orangered;
+        border-bottom: 3px solid white;
         text-decoration: none;
+        @include desktop {
+          font-size: 22px;
+        }
+
       }
     }
     a.selected {
-      border-bottom: 3px solid orangered;
+      border-bottom: 3px solid white;
+      text-decoration: none;
+      @include desktop {
+        font-size: 22px;
+      }
     }
   }
 }
@@ -200,6 +251,9 @@ $nav-width-mobile: 480px;
   display: none;
   &:hover {
     border: none;
+  }
+  @include tablet {
+    display: block;
   }
   @include desktop {
     display: block;

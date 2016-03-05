@@ -2,19 +2,19 @@
  * Created by Anoxic on 112115.
  */
 
-/**
- * Enables the basic functions of navbar (animation)
- * @author Anoxic
- */
-function enableNavBar() {
-    $(".nav").hover(function() {
-        // Mousein
-        $(this).removeClass("hidden");
-    }, function() {
-        // Mouseout
-        $(this).addClass("hidden");
-    });
-}
+///**
+// * Enables the basic functions of navbar (animation)
+// * @author Anoxic
+// */
+//function enableNavBar() {
+//    $(".nav").hover(function() {
+//        // Mousein
+//        $(this).removeClass("hidden");
+//    }, function() {
+//        // Mouseout
+//        $(this).addClass("hidden");
+//    });
+//}
 
 /**
  * Enables the slider and the animation

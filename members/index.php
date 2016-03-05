@@ -1,24 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <?php include $_SERVER['DOCUMENT_ROOT'] . '/header.php'; ?>
     <title>Members | Game Development Studio</title>
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="main.css">
-    <link rel="icon" type="image/png" href="img/favicon.png">
 </head>
 <body>
+<?php include $_SERVER['DOCUMENT_ROOT'] . '/nav.php'; ?>
 
-<div class="nav hidden">
-    <div class="logo" href="javascript:;"><img alt="logo" src="img/logo.png"></div>
-    <div class="actions">
-        <a href="/index.html" style="font-weight:bolder">Home</a>
-        <a href="/about.html">About</a>
-        <a href="/members.html">Members</a>
-        <a href="/games/index.html">Games</a>
-        <a href="/contact.html">Contact</a>
-    </div>
-</div>
 
 <div class="options">
 
@@ -34,9 +22,11 @@
 
 <script type="text/template" id="underscore">
     <% _.each(data.members, function(member) { %>
-    <div class="element-item <% member.layout? print(member.layout): print('') %>" style="background-image: url('<%= member.profile %>')">
+    <div class="element-item <% member.layout? print(member.layout): print('') %>"
+         style="background-image: url('<%= member.profile %>')">
         <div class="element-item-inner">
-            <img class="alt" src="<%= member.alt %>" />
+            <img class="alt" src="<%= member.alt %>"/>
+
             <p class="name"><%= member.name %></p>
             <% if (member.tags) { %>
             <div class="tags">
@@ -51,7 +41,7 @@
     </div>
     <% }); %>
 </script>
-<script type="text/javascript" src="main.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
 <script type="text/javascript" src="members.js"></script>
 
 </body>

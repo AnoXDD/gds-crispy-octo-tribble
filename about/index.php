@@ -1,33 +1,19 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <?php include $_SERVER['DOCUMENT_ROOT'] . '/header.php'; ?>
     <title>Home | Game Development Studio</title>
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="main.css">
-    <link rel="icon" type="image/png" href="img/favicon.png">
 </head>
 <body>
+<?php include $_SERVER['DOCUMENT_ROOT'] . '/nav.php'; ?>
 
-<div class="nav hidden">
-    <div class="logo" href="javascript:;"><img alt="logo" src="img/logo.png"></div>
-    <div class="actions">
-        <a href="/index.html" style="font-weight:bolder">Home</a>
-        <a href="/about.html">About</a>
-        <a href="/members.html">Members</a>
-        <a href="/games/index.html">Games</a>
-        <a href="/contact.html">Contact</a>
-    </div>
-</div>
 
 <div class="page-content"></div>
-
-</div>
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
-<script src="lib/jquery.slimscroll.min.js"></script>
+<script src="../lib/jquery.slimscroll.min.js"></script>
 <script type="text/javascript"
         src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.7.7/jquery.fullPage.min.js"></script>
 <script type="text/template" id="underscore">
@@ -84,7 +70,7 @@
     <% }); %>
 </script>
 <script>
-    $(document).ready(function() {
+    $(document).ready(function () {
         // Read the content from template
         _.templateSettings.variable = "data";
         var template = _.template($("#underscore").html());
@@ -154,7 +140,7 @@
         });
     });
 </script>
-<script type="text/javascript" src="main.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
 
 </body>
 </html>

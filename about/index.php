@@ -77,7 +77,7 @@
         var data = {
             sections: [
                 {
-                    background: "img/about_1.jpg",
+                    background: "/img/about_1.jpg",
                     slides: {
                         titlePage: {
                             title: "About Us",
@@ -86,7 +86,7 @@
                         }
                     }
                 }, {
-                    background: "img/about_2.jpg",
+                    background: "/img/about_2.jpg",
                     slides: {
                         titlePage: {
                             title: "What We Are Doing",
@@ -98,7 +98,7 @@
                         }
                     }
                 }, {
-                    background: "img/about_3.jpg",
+                    background: "/img/about_3.jpg",
                     slides: {
                         titlePage: {
                             title: "What We Do",
@@ -106,7 +106,7 @@
                         }
                     }
                 }, {
-                    background: "img/about_4.jpg",
+                    background: "/img/about_4.jpg",
                     slides: {
                         titlePage: {
                             title: "What We Have Done",
@@ -118,7 +118,7 @@
                         }
                     }
                 }, {
-                    background: "img/about_5.jpg",
+                    background: "/img/about_5.jpg",
                     slides: {
                         titlePage: {
                             title: "History",
@@ -140,7 +140,7 @@
         });
     });
 </script>
-<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="/js/main.js"></script>
 
 </body>
 </html>

@@ -20,6 +20,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/2.2.2/isotope.pkgd.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
 
+
+<script type="text/javascript" src="members.js"></script>
 <script type="text/template" id="underscore">
     <% _.each(data.members, function(member) { %>
     <div class="element-item <% member.layout? print(member.layout): print('') %>"
@@ -41,8 +43,8 @@
     </div>
     <% }); %>
 </script>
-<script type="text/javascript" src="../js/main.js"></script>
-<script type="text/javascript" src="members.js"></script>
+<script type="text/javascript" src="/js/main.js"></script>
+
 
 </body>
 </html>

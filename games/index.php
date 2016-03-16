@@ -78,7 +78,7 @@
         var data = {
             sections: [
                 {
-                    background: "../img/unfold_logo.png",
+                    background: "/img/unfold_logo.png",
                     slides: {
                         titlePage: {
                             title: "Unfold",
@@ -90,7 +90,7 @@
                         }
                     }
                 }, {
-                    background: "../img/dreric_1.jpg",
+                    background: "/img/dreric_1.jpg",
                     slides: {
                         titlePage: {
                             title: "Dr. Eric Psychedelic Wonderland",
@@ -101,10 +101,10 @@
                             }
                         },
                         contents: [{
-                            image: "img/dreric_2.jpg",
+                            image: "/img/dreric_2.jpg",
                             desc: "The cute logo"
                         }, {
-                            image: "img/dreric_3.jpg",
+                            image: "/img/dreric_3.jpg",
                             desc: "Basic demo of this game"
                         }]
                     }
@@ -117,7 +117,7 @@
         $('.page-content').fullpage({});
     });
 </script>
-<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
 
 </body>
 </html>

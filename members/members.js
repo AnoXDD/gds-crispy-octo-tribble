@@ -23,91 +23,91 @@ function initContents() {
          */
         members: [
             {
-                profile: "img/members/eric_2016.jpg",
+                profile: "/img/members/eric_2016.jpg",
                 alt: 1,
                 name: "Eric Cheng",
                 position: "President",
                 tags: ["Founder"],
                 desc: "\"Take it slow. Make it happen\" - Battlecruiser Captain"
             }, {
-                profile: "img/members/michael_2016.jpg",
+                profile: "/img/members/michael_2016.jpg",
                 alt: 1,
                 name: "Michael Gonzalez",
                 position: "Vice President"
             }, {
-                profile: "img/members/gavin_2016.jpg",
+                profile: "/img/members/gavin_2016.jpg",
                 alt: 1,
                 name: "Gavin Badillo",
                 position: "Treasurer"
             }, {
-                profile: "img/members/Isabelle.png",
+                profile: "/img/members/Isabelle.png",
                 name: "Isabelle Cabana",
                 position: "Secretary"
             }, {
-                profile: "img/members/runjie_2016.jpg",
+                profile: "/img/members/runjie_2016.jpg",
                 alt: 1,
                 name: "Runjie Guan",
                 position: "Historian"
             }, {
-                profile: "img/members/sher_2016.jpg",
+                profile: "/img/members/sher_2016.jpg",
                 alt: 1,
                 name: "Sher Zahed",
             }, {
-                profile: "img/members/anhquan_2016.jpg",
+                profile: "/img/members/anhquan_2016.jpg",
                 alt: 1,
                 name: "AnhQuan Nguyen",
             }, {
-                profile: "img/members/steven_2016.jpg",
+                profile: "/img/members/steven_2016.jpg",
                 alt: 1,
                 name: "Steven Lee",
                 position: "Development Manager"
             }, {
-                profile: "img/members/alec_2016.jpg",
+                profile: "/img/members/alec_2016.jpg",
                 alt: 1,
                 name: "Alec Brickner",
                 position: "Development Manager"
             }, {
-                profile: "img/members/mai_2016.jpg",
+                profile: "/img/members/mai_2016.jpg",
                 alt: 1,
                 name: "Mai Dinh",
             }, {
-                profile: "img/members/peter.png",
+                profile: "/img/members/peter.png",
                 name: "Peter Vugia"
             }, {
-                profile: "img/members/eric_luo.jpg",
+                profile: "/img/members/eric_luo.jpg",
                 name: "Eric Luo"
             }, {
-                profile: "img/members/fernando.jpg",
+                profile: "/img/members/fernando.jpg",
                 name: "Fernando Granizo"
             }, {
-                profile: "img/members/mehul.jpg",
+                profile: "/img/members/mehul.jpg",
                 name: "Mehul Goel"
             }, {
                 name: "Julian Al-Haddad"
             }, {
                 name: "Richard Wan"
             }, {
-                profile: "img/members/james_2016.jpg",
+                profile: "/img/members/james_2016.jpg",
                 alt: 1,
                 name: "James Allen"
             }, {
-                profile: "img/members/kalan_2016.jpg",
+                profile: "/img/members/kalan_2016.jpg",
                 alt: 1,
                 name: "Kalan Miurrelle"
             }, {
-                profile: "img/members/guyue_2016.jpg",
+                profile: "/img/members/guyue_2016.jpg",
                 alt: 1,
                 name: "Guyue Zhou"
             }, {
-                profile: "img/members/nadia_2016.jpg",
+                profile: "/img/members/nadia_2016.jpg",
                 alt: 1,
                 name: "Nadia Kurihara"
             }, {
-                profile: "img/members/hilary_2016.jpg",
+                profile: "/img/members/hilary_2016.jpg",
                 alt: 1,
                 name: "Hilary Ng"
             }, {
-                profile: "img/members/daniel_2016.jpg",
+                profile: "/img/members/daniel_2016.jpg",
                 alt: 1,
                 name: "Daniel Griffiths"
             }

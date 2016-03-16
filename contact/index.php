@@ -77,7 +77,7 @@
         var data = {
             sections: [
                 {
-                    background: "img/contact_1.jpg",
+                    background: "/img/contact_1.jpg",
                     slides: {
                         titlePage: {
                             title: "Contact",
@@ -89,7 +89,7 @@
                         }
                     }
                 }, {
-                    background: "img/contact_2.jpg",
+                    background: "/img/contact_2.jpg",
                     slides: {
                         titlePage: {
                             title: "Blog",
@@ -101,7 +101,7 @@
                         }
                     }
                 }, {
-                    background: "img/contact_3.jpg",
+                    background: "/img/contact_3.jpg",
                     slides: {
                         titlePage: {
                             title: "Calendar",
@@ -120,7 +120,7 @@
         $('.page-content').fullpage({});
     });
 </script>
-<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="/js/main.js"></script>
 
 </body>
 </html>

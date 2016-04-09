@@ -1,6 +1,10 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
+    <?php
+    session_start();
+    $_SESSION["curr_page"] = basename(__DIR__);
+    ?>
     <?php include $_SERVER['DOCUMENT_ROOT'] . '/header.php'; ?>
     <title>Contact | Game Development Studio</title>
 
@@ -120,7 +124,6 @@
         $('.page-content').fullpage({});
     });
 </script>
-<script type="text/javascript" src="/js/main.js"></script>
-
+<?php include $_SERVER['DOCUMENT_ROOT'] . '/footer.php'; ?>
 </body>
 </html>

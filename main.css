@@ -425,6 +425,7 @@ img, button:focus {
     transform: scale(1.2, 1.2) translate(-40%, -40%);
     transition: all 0.5s; } }
 #nav-menu {
+  box-shadow: 1px 1px 10px #666;
   background-color: #40c4ff;
   height: 50px;
   overflow: hidden;
@@ -491,15 +492,9 @@ img, button:focus {
       #nav-menu .scroll-hide a:hover {
         border-bottom: 3px solid white;
         text-decoration: none; }
-        @media (min-width: 1024px) {
-          #nav-menu .scroll-hide a:hover {
-            font-size: 22px; } }
     #nav-menu .scroll-hide a.selected {
       border-bottom: 3px solid white;
       text-decoration: none; }
-      @media (min-width: 1024px) {
-        #nav-menu .scroll-hide a.selected {
-          font-size: 22px; } }
 
 #logo-filler {
   width: 150px;

@@ -157,6 +157,7 @@ $nav-width-mobile: 450px;
 }
 
 #nav-menu {
+  box-shadow: 1px 1px 10px #666;
   background-color: $blue;
   height: $nav-height;
   overflow: hidden;
@@ -228,7 +229,7 @@ $nav-width-mobile: 450px;
         border-bottom: 3px solid white;
         text-decoration: none;
         @include desktop {
-          font-size: 22px;
+
         }
 
       }
@@ -237,7 +238,7 @@ $nav-width-mobile: 450px;
       border-bottom: 3px solid white;
       text-decoration: none;
       @include desktop {
-        font-size: 22px;
+
       }
     }
   }

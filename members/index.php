@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <?php
+    session_start();
+    $_SESSION["curr_page"] = basename(__DIR__);
+    ?>
     <?php include $_SERVER['DOCUMENT_ROOT'] . '/header.php'; ?>
     <title>Members | Game Development Studio</title>
 </head>
@@ -43,8 +47,8 @@
     </div>
     <% }); %>
 </script>
-<script type="text/javascript" src="/js/main.js"></script>
 
+<?php include $_SERVER['DOCUMENT_ROOT'] . '/footer.php'; ?>
 
 </body>
 </html>
